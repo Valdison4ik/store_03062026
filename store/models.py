@@ -93,6 +93,8 @@ class Customer(models.Model):
     )
     date_joined = models.DateTimeField(auto_now_add=True, verbose_name='Дата регистрации')
 
+    # deleted, deleted_at
+
     class Meta:
         verbose_name = 'Клиент'
         verbose_name_plural = 'Клиенты'
