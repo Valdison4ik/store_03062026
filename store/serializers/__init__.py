@@ -1,0 +1,8 @@
+from .categories import CategorySerializer
+from .suppliers import SupplierSerializer
+from .products import ProductSerializer, ProductCreateUpdateSerializer
+from .product_details import ProductDetailSerializer, ProductDetailCreateUpdateSerializer
+from .addresses import AddressSerializer
+from .customers import CustomerSerializer, CustomerCreateUpdateSerializer
+from .orders import OrderSerializer, OrderCreateUpdateSerializer
+from .order_items import OrderItemSerializer, OrderItemCreateUpdateSerializer

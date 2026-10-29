@@ -10,8 +10,16 @@ class CustomerSerializer(ModelSerializer):
 
     class Meta:
         model = Customer
-        fields = ['id', 'first_name', 'last_name', 'email', 'phone_number', 'address', 'date_joined']
-        read_only_fields = ['id', 'date_joined']
+        fields = ['id'
+            , 'first_name'
+            , 'last_name'
+            , 'email'
+            , 'phone_number'
+            , 'address'
+            , 'date_joined'
+            , 'deleted'
+            , 'deleted_at']
+        read_only_fields = ['id', 'date_joined', 'deleted', 'deleted_at']
 
 
 class CustomerCreateUpdateSerializer(ModelSerializer):
