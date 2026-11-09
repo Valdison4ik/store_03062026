@@ -8,7 +8,7 @@ class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
-    search_fields = ('name',)
+    # search_fields = ('name',)
     # ordering_fields = ('published_date', 'page_count')
     # ordering = ('-published_date',)
     # filterset_fields = {

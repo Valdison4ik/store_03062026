@@ -1,1 +1,3 @@
 from .categories import CategoryViewSet, CategoryUpdateViewSet
+from .suppliers import SupplierUpdateViewSet
+from .products import ProductUpdateDestroyViewSet, ProductListCreateViewSet

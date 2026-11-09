@@ -17,12 +17,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter, SimpleRouter
-from store.views import CategoryViewSet, CategoryUpdateViewSet
+from rest_framework.authtoken.views import obtain_auth_token
+from store.views import (CategoryViewSet
+                        , CategoryUpdateViewSet
+                        , SupplierUpdateViewSet
+                        , ProductUpdateDestroyViewSet
+                         ,ProductListCreateViewSet)
 #
-# router = DefaultRouter()
-# router.register(r'categories', CategoryViewSet)
+router = DefaultRouter()
+router.register(r'categories', CategoryUpdateViewSet)
+router.register(r'suppliers', SupplierUpdateViewSet)
+router.register(r'products', ProductUpdateDestroyViewSet, basename='detail_product')
+router.register(r'products', ProductListCreateViewSet, basename='product')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('api/v1/', include(router.urls))
+    path('api/v1/', include(router.urls)),
+    path('obtain-auth-token/', obtain_auth_token, name='obtain_auth_token')
 ]
